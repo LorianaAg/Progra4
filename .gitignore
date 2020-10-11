@@ -1,0 +1,14 @@
+BLL/obj/
+DAL/obj/
+DAL/bin/
+BLL/bin/Debug/BLL.dll
+BLL/bin/Debug/BLL.pdb
+BLL/bin/Debug/DAL.dll
+BLL/bin/Debug/DAL.dll.config
+BLL/bin/Debug/DAL.pdb
+Proyecto/bin/
+Proyecto/obj/
+packages/
+Proyecto.Tests/bin/
+Proyecto.Tests/obj/
+.vs/

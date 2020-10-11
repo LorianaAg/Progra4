@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Proyecto.Models.TipoPlaca>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+    {
+        @Html.ActionLink("Crear TipoPlaca", "Crear")
+    }
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTipoPlaca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionTP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdTipoPlaca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DescripcionTP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+            {
+
+                <p>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdTipoPlaca }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdTipoPlaca })
+                </p>
+            }
+            </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Proyecto.Models.Unidad>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+    {
+        @Html.ActionLink("Crear Unidad", "Crear")
+    }
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUnidad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTipoPlaca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdLinea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DescripcionLinea)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdUnidad)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Descripcion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdTipoPlaca)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Placa)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdLinea)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DescripcionLinea)
+    </td>
+
+    <td>
+        @Html.DisplayFor(modelItem => item.Estado)
+    </td>
+    <td>
+        @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+        {
+
+            <p>
+                @Html.ActionLink("Editar", "Editar", new { id = item.IdUnidad }) |
+                @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdUnidad })
+            </p>
+        }
+    </td>
+</tr>
+}
+
+</table>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Proyecto.Models.Tarifa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+    {
+        @Html.ActionLink("Crear Tarifa", "Crear")
+    }
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTarifa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Monto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IdTarifa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Monto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Estado)
+        </td>
+        <td>
+            @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+            {
+
+                <p>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.IdTarifa }) |
+                    @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdTarifa })
+                </p>
+            }
+            </td>
+    </tr>
+}
+
+</table>

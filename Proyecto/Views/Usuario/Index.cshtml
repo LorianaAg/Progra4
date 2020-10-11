@@ -1,0 +1,107 @@
+﻿@model IEnumerable<Proyecto.Models.Usuario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @if (User.IsInRole("Administrador") || User.IsInRole("Gerente"))
+    {
+        @Html.ActionLink("Crear Usuario", "Crear")
+    }
+    </p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IdUsuario)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Nombre2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Apellido2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.IdTipoIdentificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Identificacion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Saldo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Telefono)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Correo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Clave)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Estado)
+        </th>
+        <th>
+           <p>Rol</p>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdUsuario)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Nombre2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido1)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Apellido2)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.IdTipoIdentificacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Identificacion)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Saldo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Telefono)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Correo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Clave)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Estado)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.DescrRol)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Editar", new { id = item.IdUsuario }) |
+        @Html.ActionLink("Eliminar", "Eliminar", new { id = item.IdUsuario })
+    </td>
+</tr>
+}
+
+</table>

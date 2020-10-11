@@ -1,0 +1,118 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <html>
+    <head>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </head>
+
+    <br />
+    <br />
+
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/usuarios.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Usuario")" class="btn btn-default">Usuarios</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+
+                <br />
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/Lineas.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Linea")" class="btn btn-default">Lineas</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/unidad.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Unidad")" class="btn btn-default">Unidades</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/empresas.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Empresa")" class="btn btn-default">Empresas</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/placa.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "TipoPlaca")" class="btn btn-default">Tipo Placa</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/tarifas.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Tarifa")" class="btn btn-default">Tarifas</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br />
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/deposito.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("ActualizarSaldo", "Usuario")" class="btn btn-default">Depositar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/roles.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "Rol")" class="btn btn-default">Roles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <br />
+
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/Images/identificaciones.png">
+                        <div class="card-body">
+                            <a href="@Url.Action("Index", "TipoIdentificacion")" class="btn btn-default">Tipo Identificacion</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</html>
